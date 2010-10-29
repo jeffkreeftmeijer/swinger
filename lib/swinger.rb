@@ -1,0 +1,3 @@
+module Swinger
+  # Your code goes here...
+end
