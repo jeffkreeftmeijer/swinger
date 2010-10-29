@@ -1,4 +1,7 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'rspec'
+require 'capybara'
 
 describe RSpec::Core::Example do
 
