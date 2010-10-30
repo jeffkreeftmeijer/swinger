@@ -1,15 +1,17 @@
 class RSpec::Core::Example
-  run = self.instance_method(:run)
 
-  define_method(:run) do |*args|
-    Capybara.using_driver(metadata[:driver]) { run.bind(self).call(*args) }
+  alias_method :__run_before_swinger, :run
+  private :__run_before_swinger
+
+  def run(*args)
+    Capybara.using_driver(metadata[:driver]) { __run_before_swinger(*args) }
   end
 
 end
 
 module Capybara
 
-  def self.using_driver(driver, &block)
+  def self.using_driver(driver)
     Capybara.current_driver = driver
     yield
     Capybara.use_default_driver
