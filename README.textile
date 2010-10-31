@@ -1,0 +1,45 @@
+h1. Swinger
+
+Swinger is a really simple "Capybara":http://github.com/jnicklas/capybara extension that aims to make driver switching in "RSpec":http://github.com/rspec/rspec a bit less horrible to look at. Using the new metadata feature in RSpec 2, you can simply set your @:driver@ per scenario or context:
+
+<pre><code>
+# `scenario` is an alias for `it` and `context` is an alias for `describe`, provided by Steak
+
+scenario 'get a nice greeting', :driver => :selenium do
+  visit homepage
+  page.should have_content 'Welcome'
+end
+
+context 'when logged in', :driver => :rack_test do
+
+  scenario 'get a nice greeting' do
+    visit homepage
+    page.should have_content 'Welcome back'
+  end
+
+  scenario 'see the logout link' do
+    visit homepage
+    page.should have_content 'Logout'
+  end
+
+end
+</code></pre>
+
+It also adds the @using_driver@ method to Capybara, allowing you to execute a block using a specific driver. This is especially useful when you're (still) not on RSpec 2 and can't use the new metadata feature:
+
+<pre><code>
+scenario 'get a nice greeting' do
+  Capybara.using_driver :selenium do
+    visit homepage
+    page.should have_content 'Welcome'
+  end
+end
+</code></pre>
+
+h2. Installation
+
+Installing Swinger is easy. Simply add it to your @Gemfile@ and require it in @spec_helper.rb@ (or @acceptance_helper.rb@ if you're using "Steak":http://github.com/cavalle/steak).
+
+h2. Contributing
+
+Found an issue? Have a great idea? Want to help? Great! Create an issue "issue":http://github.com/jeffkreeftmeijer/swinger/issues for it, "ask":http://github.com/inbox/new/jeffkreeftmeijer, or even better; fork the project and fix the problem yourself. Pull requests are always welcome. :)
