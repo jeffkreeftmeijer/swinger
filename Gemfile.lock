@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    swinger (0.0.1)
+    swinger (0.0.2)
       capybara (~> 0.3.0)
       rspec (>= 1.0.0)
 
