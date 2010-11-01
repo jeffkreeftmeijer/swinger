@@ -16,6 +16,7 @@ module Capybara
   def self.using_driver(driver)
     Capybara.current_driver = driver
     yield
+  ensure
     Capybara.use_default_driver
   end
 
