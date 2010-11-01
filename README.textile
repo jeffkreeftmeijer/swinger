@@ -3,7 +3,7 @@ h1. Swinger
 Swinger is a really simple "Capybara":http://github.com/jnicklas/capybara extension that aims to make driver switching in "RSpec":http://github.com/rspec/rspec a bit less horrible to look at. Using the new metadata feature in RSpec 2, you can simply set your @:driver@ per scenario or context:
 
 <pre><code>
-# `scenario` is an alias for `it` and `context` is an alias for `describe`, provided by Steak
+# `scenario` is an alias for `it`, provided by Steak
 
 scenario 'get a nice greeting', :driver => :selenium do
   visit homepage
