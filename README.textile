@@ -3,21 +3,19 @@ h1. Swinger
 Swinger is a really simple "Capybara":http://github.com/jnicklas/capybara extension that aims to make driver switching in "RSpec":http://github.com/rspec/rspec a bit less horrible to look at. Using the new metadata feature in RSpec 2, you can simply set your @:driver@ per scenario or context:
 
 <pre><code>
-# `scenario` is an alias for `it`, provided by Steak
-
-scenario 'get a nice greeting', :driver => :selenium do
+it 'should give a nice greeting', :driver => :selenium do
   visit homepage
   page.should have_content 'Welcome'
 end
 
 context 'when logged in', :driver => :rack_test do
 
-  scenario 'get a nice greeting' do
+  it 'should get a nice greeting' do
     visit homepage
     page.should have_content 'Welcome back'
   end
 
-  scenario 'see the logout link' do
+  it 'should show the logout link' do
     visit homepage
     page.should have_content 'Logout'
   end
@@ -28,7 +26,7 @@ end
 It also adds the @using_driver@ method to Capybara, allowing you to execute a block using a specific driver. This is especially useful when you're (still) not on RSpec 2 and can't use the new metadata feature:
 
 <pre><code>
-scenario 'get a nice greeting' do
+it 'should give a nice greeting' do
   Capybara.using_driver :selenium do
     visit homepage
     page.should have_content 'Welcome'
