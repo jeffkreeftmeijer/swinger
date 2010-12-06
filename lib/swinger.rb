@@ -1,14 +1,9 @@
-if defined? RSpec::Core::Example
-  class RSpec::Core::Example
+RSpec.configure do |c|
 
-    alias_method :__run_before_swinger, :run
-    private :__run_before_swinger
-
-    def run(*args)
-      Capybara.using_driver(metadata[:driver]) { __run_before_swinger(*args) }
-    end
-
+  c.around do |example|
+    Capybara.using_driver(example.metadata[:driver]) { example }
   end
+
 end
 
 module Capybara

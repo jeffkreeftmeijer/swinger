@@ -3,7 +3,7 @@ PATH
   specs:
     swinger (0.0.3)
       capybara (~> 0.3)
-      rspec (>= 1.0.0)
+      rspec (~> 2.2)
 
 GEM
   remote: http://rubygems.org/
@@ -32,15 +32,15 @@ GEM
     rack-test (0.5.6)
       rack (>= 1.0)
     rake (0.8.7)
-    rspec (2.1.0)
-      rspec-core (~> 2.1.0)
-      rspec-expectations (~> 2.1.0)
-      rspec-mocks (~> 2.1.0)
-    rspec-core (2.1.0)
-    rspec-expectations (2.1.0)
+    rspec (2.2.0)
+      rspec-core (~> 2.2)
+      rspec-expectations (~> 2.2)
+      rspec-mocks (~> 2.2)
+    rspec-core (2.2.1)
+    rspec-expectations (2.2.0)
       diff-lcs (~> 1.1.2)
     rspec-instafail (0.1.5)
-    rspec-mocks (2.1.0)
+    rspec-mocks (2.2.0)
     ruby-progressbar (0.0.9)
     rubyzip (0.9.4)
     selenium-webdriver (0.0.29)
@@ -55,5 +55,5 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 0.3)
   fuubar
-  rspec (>= 1.0.0)
+  rspec (~> 2.2)
   swinger!
