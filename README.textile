@@ -1,4 +1,6 @@
-h1. Swinger
+h1. Swinger "!http://stillmaintained.com/jeffkreeftmeijer/swinger.png!":http://stillmaintained.com/jeffkreeftmeijer/swinger
+
+*Swinger is not being maintained anymore*. "Capybara can do RSpec driver swapping out of the box now":http://jeffkreeftmeijer.com/2011/capybara-ate-swinger/. :)
 
 Swinger is a really simple "Capybara":http://github.com/jnicklas/capybara extension that aims to make driver switching in "RSpec":http://github.com/rspec/rspec a bit less horrible to look at. Using the new metadata feature in RSpec 2, you can simply set your @:driver@ per scenario or context:
 
